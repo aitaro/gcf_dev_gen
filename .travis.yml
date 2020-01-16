@@ -1,29 +1,18 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 python:
-  - 3.8
-  - 3.7
-  - 3.6
-  - 3.5
-
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+- 3.8
+- 3.7
+- 3.6
+- 3.5
 install: pip install -U tox-travis
-
-# Command to run tests, e.g. python setup.py test
 script: tox
-
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: __token__
-  password:
-    secure: "2i9C6lCUpjaLQpUzqNHuVrwlR5h75BOohJ9qFaH+2upzs8UzQ8LJ6GNvBobbFcgLPGZFp4UYCYM1RBL4bg6HCvEMzmEYC+XBGnW1HmoyAt2c+r++H5c+0/FdU97849qqa1srLRmeXSbnSpBxrhfkYeQrn9MDmZEzsGsPD5t22/DtEPGRL7p2OLfdhMroSo5LfwCcJMmjyU8NzGP/mzHOa0UpJdYiBvcJAJqtLaNJ9mxPV0813IPZvQNfuKxv6XDHlZ+Zbt/kpk2CpZgtqQyz6MhWnqXZ1fQvBO0Ed0m65UG3OnH1HuR944RS/fv7VoxzS6OV6V1bvOmFw/R87gQIcbHmWeDnlLI8Bo8d4EIDF+qh5I/+KCI23frASr/a29hSgrDIPro3VEsAJ+F2B/9kHWSGg6SzL1QorTdJ/CRRRQHXGbgeFL8ROLW8Q0hy8M00r1akn+EhMfj1RMz0Fmes7wFemxg+kwl9zBJKYfMp1jW1A5zvckaR1nAiTOl/7Npr0YwGlf3jmz7MHs9FnLFt9QimMoz2uLHHnfus1Ph8axtUeZOLHTu3UEkFAAXqnax3STkbg4fvoV//0H5oqFbJGFuGOffgudA1IsBibEUoRPc5Hafrxktia+VQOOSFgWJpMaeAeNSWb9mslRwNbnmod9VN1gBa3R7dD7o/QRce9V0="
   on:
     tags: true
     repo: aitaro/gcf_dev_gen
     python: 3.8
+  password:
+    secure: II9KmABy9RD57gQcxLu4qD0acGFIx3nEgwnqcIV8u89p3mjmyBooD8JcYeSJnptuTMb4jiLOi8Cy7NNWRNwxS2vmBnX7p1J4itIblMFF5okomR8Bhr9hAuDM7aUoPIQanFN3pKJuydjhkeTMLQ4QRKNnv+oSrwhZmhuSCuPHnRSspIk1NNNP3Uj7+uOQgzamXce3INaWCCovRqqp4vFFkyGEGh3o1KN8CdiCVD/sskBo/eWVtmlQqbTpGqLlwaZ+jJgE/JQlJPx9ERnqX3IKGO1HbCsLOhOuH411M+uVpmv91lR1ZCQNTybME0OrZhIWmgoLzwXqSuJN19+ljNYut9to8OHus4CVAbd6cyHGe+/jkZbHZaKYu3Jb++DJdo5PNBJ0Y3mylrpaLQ0nGuotfFAyE4AGMNZMdveD5TLVDs9ta/R8mI7ZlKVhstPe8lck5CtMX3DXLiuFkn8+M8WT7SDb+EQoRpju67+JBksAlflokmfqhalqoqw5fKH11N8PVqO45LwDnJOaB4ClOICFv3XFFKM+lMAYGi2q/CGApWGG4AVKTDq6MDC5crM47bWR1jm0OG2ii97dK6tHteMwtrwIMwoNgq3bPcF3jlpHCccMg5VSMBVSCu7BekZAbBE9a7ME/33L4554GwTQHDXf45Sf7Wm+rd5x6KghMnz75Jw=
